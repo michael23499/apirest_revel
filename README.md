@@ -21,8 +21,6 @@ Incluye autenticación con **JWT**, soporte **HTTPS con certificados auto-firmad
 
 ---
 
-npm install --save-dev jest
-
 ## 📦 Dependencias principales
 
 | Dependencia      | Descripción                                                                 | Instalación                |
@@ -70,8 +68,6 @@ git clone [<url-del-repo>](https://github.com/michael23499/apirest_revel.git)
 cd apirest_reveltest
 
 2. Crea un archivo .env en la raíz del proyecto con el siguiente contenido:
-
-Explicar mas
 
 # ===============================
 
