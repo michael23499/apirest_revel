@@ -144,19 +144,24 @@ const productController = {
         return res.status(404).json({ error: ERRORS.PRODUCT.NOT_FOUND });
       }
 
+      // 🔹 Verificar permisos
       if (product.userId !== req.user.id && req.user.role !== "administrator") {
         return res.status(403).json({ error: ERRORS.PRODUCT.NO_PERMISSION });
       }
 
+      // 🔹 Eliminar (dependiendo si hace destroy directo o find+destroy)
       await ProductService.deleteProduct(req.params.id);
 
-      res.json({ message: ERRORS.PRODUCT.DELETE_SUCCESS });
+      // 🔹 Devolver también el producto eliminado
+      res.json({
+        message: ERRORS.PRODUCT.DELETE_SUCCESS,
+        product, // Objeto de producto
+      });
     } catch (error) {
       console.error(error);
       next(error);
     }
   },
-
   /**
    * 🔹 Búsqueda avanzada de productos
    * Filtra por nombre, descripción, categoría, precio mínimo/máximo
