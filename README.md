@@ -21,6 +21,8 @@ Incluye autenticación con **JWT**, soporte **HTTPS con certificados auto-firmad
 
 ---
 
+npm install --save-dev jest
+
 ## 📦 Dependencias principales
 
 | Dependencia      | Descripción                                                                 | Instalación                |
@@ -194,6 +196,17 @@ Body JSON:
 
 ```JSON
 {
+    "name": "Michael",
+    "email": "michael@gmail.com",
+    "password": "123456"
+}
+```
+
+Respuestas JSON: ✅ 200 OK – Registro exitoso
+
+```JSON
+{
+{
     "message": "Usuario registrado correctamente",
     "user": {
         "id": 1,
@@ -202,14 +215,6 @@ Body JSON:
         "createdAt": "2025-08-25T00:08:54.529Z"
     }
 }
-```
-
-Respuestas JSON: ✅ 200 OK – Registro exitoso
-
-```JSON
-{
-    "message": "Usuario registrado correctamente",
-    "userId": 1
 }
 ⚠️ 400 Bad Request – Error de validación
 
